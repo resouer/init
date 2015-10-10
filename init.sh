@@ -10,22 +10,36 @@ apt-get install -y git
 git config --global user.name "Harry Zhang"
 git config --global user.email "harryzhang@zju.edu.cn"
 
-# write gopath
+# write GOPATH
 cat <<EOT >> /etc/profile
 export PATH=$PATH:/usr/local/go/bin
-export GOPATH=/root/gocode
+export GOPATH=$HOME/gocode
 EOT
+
+# make golang take effect
+source /etc/profile
 
 # instal godep
 source /etc/profile
 go version
 apt-get install -y mercurial
+export GOPATH=$HOME/go-tools
+mkdir -p $GOPATH
 go get github.com/tools/godep
 
-# write kpath
+# set up workspace
+export KPATH=$HOME/code/kubernetes
+mkdir -p $KPATH/src/k8s.io/kubernetes
+cd $KPATH/src/k8s.io/kubernetes
+git clone https://github.com/zju-sel/kubernetes.git .
+git remote add upstream 'https://github.com/kubernetes/kubernetes.git'
+
+# write godep & KPATH
 cat <<EOT >> /etc/profile
-export KPATH=/root/code/kubernetes
-export GOPATH=$KPATH/bin:$GOPATH
+export GOPATH=$GOPATH:$HOME/go-tools
+
+export KPATH=$HOME/code/kubernetes
+export GOPATH=$KPATH:$GOPATH
 
 export PATH=$PATH:$GOPATH/bin
 EOT
@@ -37,9 +51,3 @@ apt-get install -y curl
 curl -L  https://github.com/coreos/etcd/releases/download/v2.2.0/etcd-v2.2.0-linux-amd64.tar.gz -o etcd-v2.2.0-linux-amd64.tar.gz
 tar xzvf etcd-v2.2.0-linux-amd64.tar.gz
 cp etcd-v2.2.0-linux-amd64/etcd /usr/local/bin
-
-# set up workspace
-mkdir -p $KPATH/src/k8s.io/kubernetes
-cd $KPATH/src/k8s.io/kubernetes
-git clone https://github.com/zju-sel/kubernetes.git .
-git remote add upstream 'https://github.com/kubernetes/kubernetes.git'
