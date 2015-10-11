@@ -56,3 +56,6 @@ cp etcd-v2.2.0-linux-amd64/etcd /usr/local/bin
 
 # install docker
 wget -qO- https://get.docker.com/ | sh
+
+# download kubelet
+wget -O https://github.com/resouer/init/raw/master/kubectl $HOME/kubectl
