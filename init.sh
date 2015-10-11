@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Only work for root user
+echo "This init shell only work for root (for Aliyun)"
+
 # install golang
 wget https://storage.googleapis.com/golang/go1.5.1.linux-amd64.tar.gz
 tar -C /usr/local -xzf go1.5.1.linux-amd64.tar.gz
@@ -20,7 +23,6 @@ EOT
 source /etc/profile
 
 # instal godep
-source /etc/profile
 go version
 apt-get install -y mercurial
 export GOPATH=$HOME/go-tools
