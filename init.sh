@@ -20,7 +20,7 @@ export GOPATH=\$HOME/gocode
 EOT
 
 # make golang take effect
-source /etc/profile
+source $HOME/.bashrc
 
 # instal godep
 go version
@@ -46,7 +46,7 @@ export GOPATH=\$KPATH:\$GOPATH
 export PATH=$PATH:\$GOPATH/bin
 EOT
 
-source /etc/profile
+source $HOME/.bashrc
 
 # prepare cluster
 apt-get install -y curl
