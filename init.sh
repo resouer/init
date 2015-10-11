@@ -49,7 +49,7 @@ EOT
 source $HOME/.bashrc
 
 # prepare cluster
-apt-get install -y curl
+apt-get install -y curl gcc
 curl -L  https://github.com/coreos/etcd/releases/download/v2.2.0/etcd-v2.2.0-linux-amd64.tar.gz -o etcd-v2.2.0-linux-amd64.tar.gz
 tar xzvf etcd-v2.2.0-linux-amd64.tar.gz
 cp etcd-v2.2.0-linux-amd64/etcd /usr/local/bin
@@ -58,4 +58,4 @@ cp etcd-v2.2.0-linux-amd64/etcd /usr/local/bin
 wget -qO- https://get.docker.com/ | sh
 
 # download kubelet
-wget -O https://github.com/resouer/init/raw/master/kubectl $HOME/kubectl
+wget https://github.com/resouer/init/raw/master/kubectl -O $HOME/kubectl
