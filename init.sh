@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Only work for root user
-echo "This init shell only work for root (for Aliyun)"
+echo "This init shell only work for root (for Aliyun, Ucloud)"
 
 # install golang
 wget https://storage.googleapis.com/golang/go1.5.1.linux-amd64.tar.gz
@@ -14,7 +14,7 @@ git config --global user.name "Harry Zhang"
 git config --global user.email "harryzhang@zju.edu.cn"
 
 # write GOPATH
-cat <<EOT >> /etc/profile
+cat <<EOT >> $HOME/.bashrc
 export PATH=\$PATH:/usr/local/go/bin
 export GOPATH=\$HOME/gocode
 EOT
@@ -37,7 +37,7 @@ git clone https://github.com/zju-sel/kubernetes.git .
 git remote add upstream 'https://github.com/kubernetes/kubernetes.git'
 
 # write godep & KPATH
-cat <<EOT >> /etc/profile
+cat <<EOT >> $HOME/.bashrc
 export GOPATH=\$GOPATH:\$HOME/go-tools
 
 export KPATH=\$HOME/code/kubernetes
