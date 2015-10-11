@@ -15,8 +15,8 @@ git config --global user.email "harryzhang@zju.edu.cn"
 
 # write GOPATH
 cat <<EOT >> /etc/profile
-export PATH=$PATH:/usr/local/go/bin
-export GOPATH=$HOME/gocode
+export PATH=\$PATH:/usr/local/go/bin
+export GOPATH=\$HOME/gocode
 EOT
 
 # make golang take effect
@@ -38,12 +38,12 @@ git remote add upstream 'https://github.com/kubernetes/kubernetes.git'
 
 # write godep & KPATH
 cat <<EOT >> /etc/profile
-export GOPATH=$GOPATH:$HOME/go-tools
+export GOPATH=\$GOPATH:\$HOME/go-tools
 
-export KPATH=$HOME/code/kubernetes
-export GOPATH=$KPATH:$GOPATH
+export KPATH=\$HOME/code/kubernetes
+export GOPATH=\$KPATH:\$GOPATH
 
-export PATH=$PATH:$GOPATH/bin
+export PATH=$PATH:\$GOPATH/bin
 EOT
 
 source /etc/profile
