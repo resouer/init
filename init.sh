@@ -43,7 +43,7 @@ export GOPATH=\$GOPATH:\$HOME/go-tools
 export KPATH=\$HOME/code/kubernetes
 export GOPATH=\$KPATH:\$GOPATH
 
-export PATH=$PATH:\$GOPATH/bin
+export PATH=\$PATH:\$GOPATH/bin
 EOT
 
 source $HOME/.bashrc
