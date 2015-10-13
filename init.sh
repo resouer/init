@@ -13,6 +13,10 @@ apt-get install -y git
 git config --global user.name "Harry Zhang"
 git config --global user.email "harryzhang@zju.edu.cn"
 
+# install vimrc
+git clone git://github.com/amix/vimrc.git ~/.vim_runtime
+sh ~/.vim_runtime/install_basic_vimrc.sh
+
 # write GOPATH
 cat <<EOT >> $HOME/.bashrc
 export PATH=\$PATH:/usr/local/go/bin
