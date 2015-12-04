@@ -60,3 +60,6 @@ wget -qO- https://get.docker.com/ | sh
 
 # download kubelet
 wget https://github.com/resouer/init/raw/master/kubectl -O $HOME/kubectl
+
+# add git prompt
+curl -o ~/.git-prompt.sh https://raw.githubusercontent.com/git/git/v2.3.2/contrib/completion/git-prompt.sh
