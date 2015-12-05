@@ -19,7 +19,8 @@ sh ~/.vim_runtime/install_basic_vimrc.sh
 
 # write GOPATH
 cat <<EOT >> $HOME/.bashrc
-export PATH=\$PATH:/usr/local/go/bin
+export GOROOT=/user/local/go
+export PATH=\$PATH:\$GOROOT/bin
 EOT
 
 # make golang take effect
